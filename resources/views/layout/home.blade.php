@@ -45,18 +45,17 @@
           <div class="container">
             <nav class="nav">
               <ul data-type="navbar" class="sf-menu">
-                 <li><a >Articulos</a>
+                 <li><a href="Registroelementos">Categorias</a>
                   <ul>
-                    <li><a href="Registroelementos">Registrar Articulos</a></li>
+                    <!--<li><a href="Registroelementos">Registrar Categorias</a></li>-->
                      <ul>
                           </ul></a></li>
                          </ul>
                 </li>
-                <li><a >Categorias</a>
+                <li><a href="{!! url("/registroelementos") !!}">Articulos</a>
                 	<ul>
-                    <li><a href="{!! url("/registroelementos") !!}">Registrar Categorias</a></li>
+                    <!--<li><a href="{!! url("/registroelementos") !!}">Registrar Categorias</a></li>-->
                      </ul>
-                      <li><a >Gestionar Articulos</a>
                   <ul>
                   </ul>
                 

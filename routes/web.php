@@ -18,3 +18,6 @@ Route::get('/Registroelementos','registroelementosController@Registroelementos')
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+
+//Route::get('/agregarcategorias','agregarcategoriasController@Registroelementos')->middleware('auth');
+
