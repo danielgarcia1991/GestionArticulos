@@ -52,7 +52,7 @@
                           </ul></a></li>
                          </ul>
                 </li>
-                <li><a href="{!! url("/registroelementos") !!}">Articulos</a>
+                <li><a href="{!! url("/gestion_articulos") !!}">Articulos</a>
                 	<ul>
                     <!--<li><a href="{!! url("/registroelementos") !!}">Registrar Categorias</a></li>-->
                      </ul>

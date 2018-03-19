@@ -122,7 +122,7 @@
 
 
               <div class="grid_9">
-                <h2>Categorias</h2><img src="" alt="">
+                <h2>Articulos</h2><img src="" alt="">
                 
                 <table>
                   <tr bgcolor="#C9C9C9">
@@ -131,7 +131,7 @@
                   <!--aqui se colocan todas las categorias de la base de datos con sus respectivas acciones--> 
                 </table>  
               </div> 
-              <div align="right"><a href="{!! url("/agregarcategorias") !!}" class="btn">Nueva Categoria</a></div> 
+              <div align="right"><a href="#" class="btn">Nueva Categoria</a></div> 
             </div>
             
           </div>

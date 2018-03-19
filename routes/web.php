@@ -19,5 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
-//Route::get('/agregarcategorias','agregarcategoriasController@Registroelementos')->middleware('auth');
+Route::get('/agregarcategorias','registroelementosController@create')->middleware('auth');
+
+Route::get('/gestion_articulos','ArticleController@article')->middleware('auth');
 

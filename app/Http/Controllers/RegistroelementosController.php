@@ -18,7 +18,7 @@ class RegistroelementosController extends Controller
      */
     public function create()
     {
-        return view('web.crearcategoria');
+        return view('web.agregar_categorias');
     }
     
 }
