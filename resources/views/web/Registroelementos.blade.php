@@ -128,6 +128,7 @@
                   <tr bgcolor="#C9C9C9">
                     <td>Nombre</td><td>Descripción</td><td>&nbsp;</td>
                   </tr>
+                  <tr><td></td></tr>
                   <!--aqui se colocan todas las categorias de la base de datos con sus respectivas acciones--> 
                 </table>  
               </div> 
