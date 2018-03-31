@@ -12,6 +12,9 @@
         <link rel="stylesheet" type="text/css" href="{{asset('css/camera.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('css/owl-carousel.css')}}">
 
+        <!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
         <script src="{{asset('js/jquery.js')}}"></script>
         <script src="{{asset('jjs/jquery-migrate-1.2.1.js')}}"></script> 
         
@@ -63,11 +66,12 @@
             </nav>
           </div>
         </div>
+        <br>
         @if(Session::has('flash_message'))
-<article class="alert alert-success">
-{{ Session::get('flash_message') }}
-</article>
-@endif
+          <div align="center" class="alert alert-success role="alert"">
+            <h5>{{ Session::get('flash_message') }}</h5>
+          </div>
+        @endif
       </header>
       
     	@yield('content')  

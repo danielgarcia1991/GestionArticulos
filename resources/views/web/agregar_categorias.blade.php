@@ -124,29 +124,42 @@
               <div class="grid_9">
 
 
-
+                
                 <h1>Agregar una nueva categoria</h1>
-                @if($errors->any())
-                  <div class="alert alert-danger">
-                @foreach($errors->all() as $error)
-                  <p>{{ $error }}</p>
-                @endforeach
-                  </div>
-                @endif
+                
                 <hr>
-                {!! Form::open(['url' => 'insertar_categorias', 'method' => 'post']) !!}
-                <div class="form-group">
-                {!! Form::label('name', 'Nombre', ['class' => 'control-label']) !!}
-                {!! Form::text('name', null, ['class' => 'form-control']) !!}
-                </div>
 
-                <div class="form-group">
-                {!! Form::label('description', 'Descripcion', ['class' => 'control-label']) !!}
-                {!! Form::text('description', null, ['class' => 'form-control']) !!}
-                </div>
-                <div align="right">
-                {!! Form::submit('Registrar', ['class' => 'btn btn-primary']) !!}
-                </div>
+                @if($errors->any())
+                  
+                @foreach($errors->all() as $error)
+                  <div class="alert alert-danger">
+                    <p><h5>{{ $error }}</h5></p>
+                  </div>
+                  <br>
+                @endforeach   
+                @endif
+
+                {!! Form::open(['url' => 'insertar_categorias', 'method' => 'post']) !!}
+
+                <table>
+                  <tr>
+                    <td>{!! Form::label('name', 'Nombre', ['class' => 'control-label']) !!}</td>
+                    <td>{!! Form::text('name', null, ['class' => 'form-control']) !!}</td>
+                  </tr>
+                  <tr>
+                    <td>{!! Form::label('description', 'Descripcion', ['class' => 'control-label']) !!}</td>
+                    <td>{!! Form::text('description', null, ['class' => 'form-control']) !!}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">   
+                    <div align="right">
+                      {!! Form::submit('Registrar', ['class' => 'btn btn-primary']) !!}
+                    </div>
+                    </td>
+                  </tr>
+                </table>
+
+                
                 {!! Form::close() !!}
 
               </div> 
