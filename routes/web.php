@@ -23,3 +23,7 @@ Route::get('/agregarcategorias','registroelementosController@create')->middlewar
 
 Route::get('/gestion_articulos','ArticleController@article')->middleware('auth');
 
+Route::get('/registrar_categorias','CategoriesController@create')->middleware('auth');
+
+Route::post('/insertar_categorias','CategoriesController@store')->middleware('auth');
+

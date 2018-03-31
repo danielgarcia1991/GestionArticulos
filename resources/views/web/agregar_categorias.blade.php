@@ -122,20 +122,34 @@
 
 
               <div class="grid_9">
-                <h2>Agregar Categoria</h2><img src="" alt="">
-                
-                <table>
-                <tr>
-                    <td>Nombre:</td>
-                  </tr>
-                  <tr>
-                    <td>Descripción:</td>
-                  </tr>
-                  
-                  <!--aqui se colocan todas las categorias de la base de datos con sus respectivas acciones--> 
-                </table>  
+
+
+
+                <h1>Agregar una nueva categoria</h1>
+                @if($errors->any())
+                  <div class="alert alert-danger">
+                @foreach($errors->all() as $error)
+                  <p>{{ $error }}</p>
+                @endforeach
+                  </div>
+                @endif
+                <hr>
+                {!! Form::open(['url' => 'insertar_categorias', 'method' => 'post']) !!}
+                <div class="form-group">
+                {!! Form::label('name', 'Nombre', ['class' => 'control-label']) !!}
+                {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                </div>
+
+                <div class="form-group">
+                {!! Form::label('description', 'Descripcion', ['class' => 'control-label']) !!}
+                {!! Form::text('description', null, ['class' => 'form-control']) !!}
+                </div>
+                <div align="right">
+                {!! Form::submit('Registrar', ['class' => 'btn btn-primary']) !!}
+                </div>
+                {!! Form::close() !!}
+
               </div> 
-              <div align="right"><a href="#" class="btn">Registrar</a></div> 
             </div>
             
           </div>

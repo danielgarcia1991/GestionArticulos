@@ -63,7 +63,13 @@
             </nav>
           </div>
         </div>
+        @if(Session::has('flash_message'))
+<article class="alert alert-success">
+{{ Session::get('flash_message') }}
+</article>
+@endif
       </header>
+      
     	@yield('content')  
         <footer>
         <section class="well3">
