@@ -13,7 +13,7 @@
 
 //Route::get('/','FrontEndController@index');
 Route::get('/','HomeController@index')->middleware('auth');
-Route::get('/Registroelementos','registroelementosController@Registroelementos')->middleware('auth');
+Route::get('/Registroelementos','CategoriesController@index')->middleware('auth');
 
 Auth::routes();
 

@@ -133,7 +133,7 @@
                   
                 @foreach($errors->all() as $error)
                   <div class="alert alert-danger">
-                    <p><h5>{{ $error }}</h5></p>
+                    <p><h6>{{ $error }}</h6></p>
                   </div>
                   <br>
                 @endforeach   

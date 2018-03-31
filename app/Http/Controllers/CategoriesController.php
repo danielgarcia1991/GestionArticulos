@@ -17,7 +17,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        return view('web.Registroelementos', ['list' => $categories]);
     }
 
     /**

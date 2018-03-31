@@ -69,7 +69,7 @@
         <br>
         @if(Session::has('flash_message'))
           <div align="center" class="alert alert-success role="alert"">
-            <h5>{{ Session::get('flash_message') }}</h5>
+            <h>{{ Session::get('flash_message') }}</h5>
           </div>
         @endif
       </header>
