@@ -25,7 +25,7 @@
               </div>-->
               <div class="grid_3">
                 <div class="info-box">
-                  <h2 class="fa-comment">Ayudasss</h2>
+                  <h2 class="fa-comment">Ayuda</h2>
                   <hr>
                   <h3>Gestion de articulos</h3>
                   <dl>
