@@ -20,10 +20,10 @@ class CreateArticlesTable extends Migration
             $table->date('date_expiration')->nullable();
             $table->integer('mileage')->nullable();
             $table->string('description')->nullable();
-            $table->integer('users_id')->unsigned();
-            $table->foreign('users_id')->references('id')->on('users');
-            $table->integer('categories_id')->unsigned();
-            $table->foreign('categories_id')->references('id')->on('categories');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

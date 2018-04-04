@@ -133,6 +133,18 @@
                   <tr>
                     <td>{{ $categories->name }}</td>
                     <td><p>{{ $categories->description }}</p></td>
+                    <td><a href="{!! url("/agregarcategorias", $categories->id) !!}" 
+                    class="btn btn-primary">Editar</a></td>
+
+                  <td>
+                  {!! Form::open([
+                  'method' => 'DELETE',
+                  'url' => ['/agregarcategorias', $categories->id]
+                  ]) !!}
+                  {!! Form::submit('Eliminar?', ['class' => 'btn btn-danger']) !!}
+                  {!! Form::close() !!}
+                  </td>
+
                   </tr>
                 @endforeach
                 </table>

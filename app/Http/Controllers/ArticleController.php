@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\model\Category;
+use App\model\Article;
+
+use Session;
+
 class ArticleController extends Controller
 {
     /**
@@ -13,7 +18,26 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        //$articles = Article::all();
+
+        //$articles = Category::find(1)->articles;
+
+        $articles = Category::selectRaw('categories.*,articles.*')
+            ->join('articles', 'categories.id', '=', 'articles.category_id')
+            ->where('articles.id', '=', 1)
+            //->groupBy('categories.id')
+            ->get();
+        
+        /*for($i=0; $i<count($categories); $i++)
+        {
+            $articles = Article::where('categories_id', '=', $categories[$i]->id)
+            ->orderBy('name', 'asc')
+            ->get();
+            $arrArticles = $arrArticles."-";
+        }
+        echo $arrArticles;*/
+        dd($articles);
+        //return view('web.gestion_articulos', ['list' => $articles]);
     }
 
     /**
@@ -39,7 +63,7 @@ class ArticleController extends Controller
 
     public function article()
     {
-        return view('web.gestion_articulos');
+        
     }
 
     /**

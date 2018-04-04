@@ -125,11 +125,16 @@
                 <h2>Articulos</h2><img src="" alt="">
                 
                 <table>
-                  <tr bgcolor="#C9C9C9">
-                    <td>Nombre</td><td>Descripción</td><td>&nbsp;</td>
+
+                @foreach($list as $articles)
+                  <tr >
+                    
+                    <td bgcolor="#C9C9C9"></td>
+                    
                   </tr>
-                  <!--aqui se colocan todas las categorias de la base de datos con sus respectivas acciones--> 
-                </table>  
+                @endforeach
+                </table>
+                
               </div> 
               <div align="right"><a href="#" class="btn">Nueva Categoria</a></div> 
             </div>
