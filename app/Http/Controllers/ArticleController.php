@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 use App\model\Category;
 use App\model\Article;
+use App\User;
+//use App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\Auth;
+
+//use Illuminate\Suppoort\Facades\Auth;
 
 use Session;
 
@@ -18,15 +23,48 @@ class ArticleController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
+        $id = Auth::id();
+
+        $articles = User::find($id)->articles;
+
+        foreach ($articles as $p) {
+            var_dump($p->Category->name);
+            }
+ 
         //$articles = Article::all();
 
-        //$articles = Category::find(1)->articles;
+        //$articles = Article::where('user_id', '=', 1);
 
-        $articles = Category::selectRaw('categories.*,articles.*')
+        //$articles = Category::find(1)->articles;
+        //dd($articles);
+
+// todos los articulos los que son propiedad del usuario Auth::user()
+// foreach articulos
+//      articulos -> name 
+//      articulos -> category -> name
+
+
+
+
+
+
+
+        /*$articles = Category::selectRaw('articles.name as art,categories.name as cat')
             ->join('articles', 'categories.id', '=', 'articles.category_id')
             ->where('articles.id', '=', 1)
+            ->where('articles.user_id', '=', 1)
             //->groupBy('categories.id')
-            ->get();
+            ->get();*/
+
+
+           /* $articles = Article::category('categories ct')
+            ->selectRaw('categories.*, count(*) as cuenta')
+            ->join('articles e', 'categories.id', '=', 'articles.category_id')
+            ->where('articles.id', '=', 1)
+            ->groupBy('categories.id')
+            ->get();*/
+            //dd($articles);
         
         /*for($i=0; $i<count($categories); $i++)
         {
@@ -36,7 +74,7 @@ class ArticleController extends Controller
             $arrArticles = $arrArticles."-";
         }
         echo $arrArticles;*/
-        dd($articles);
+        //dd($articles);
         //return view('web.gestion_articulos', ['list' => $articles]);
     }
 

@@ -129,7 +129,7 @@
                 @foreach($list as $articles)
                   <tr >
                     
-                    <td bgcolor="#C9C9C9"></td>
+                    <td bgcolor="#C9C9C9"></td>{{ $articles->art }}<td></td>
                     
                   </tr>
                 @endforeach
