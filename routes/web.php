@@ -32,9 +32,14 @@ Route::post('/insertar_categorias','CategoriesController@store')->middleware('au
 
 Route::get('/editarcategorias/{id}', 'CategoriesController@edit')->middleware('auth');
 Route::put('/editar_categorias/{id}','CategoriesController@update')->middleware('auth');
+Route::get('/buscarcategorias/{id}', 'CategoriesController@show')->middleware('auth');
+
 
 Route::get('/editararticulos/{id}', 'ArticleController@edit')->middleware('auth');
 Route::put('/editar_articulos/{id}','ArticleController@update')->middleware('auth');
+Route::get('/buscararticulos/{id}', 'ArticleController@show')->middleware('auth');
+
+
 
 
 

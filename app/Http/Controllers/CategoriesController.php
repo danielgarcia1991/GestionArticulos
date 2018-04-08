@@ -91,7 +91,15 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        //
+        try{
+            $category = Category::findOrFail($id);
+            return view('web.buscar_categorias', ['data' => $category]);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('flash_message', "No se pudo encontrar esta categoria");
+            return redirect()->back();
+        }
     }
 
     public function prueba($nombre){

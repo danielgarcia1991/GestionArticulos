@@ -76,7 +76,15 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-
+        try{
+            $article = Article::findOrFail($id);
+            return view('web.buscar_articulos', ['data' => $article]);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('flash_message', "No se pudo encontrar este articulo");
+            return redirect()->back();
+        }
     }
 
     /**

@@ -138,6 +138,9 @@
                       <td>{{ $articles->name }}</td>
                       <td><p>{{ $articles->Category->name }}</p></td>
                       <td>{{ $articles->description }}</td>
+                      <td><a href="{{url('buscararticulos', ['id' => $articles->id ])}}" 
+                    class="btn btn-primary">Ver detalle</a>
+                    </td>
                       <td><a href="{{url('editararticulos', ['id' => $articles->id ])}}" 
                     class="btn btn-primary">Editar</a>
                       

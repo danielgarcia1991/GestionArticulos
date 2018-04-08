@@ -122,44 +122,45 @@
 
 
               <div class="grid_9">
-                <h2>Categorias</h2><img src="" alt="">
-                
-                <table>
-                  <tr bgcolor="#C9C9C9">
-                    <td>Nombre</td><td>Descripción</td><td colspan="3">&nbsp;</td>
-                  </tr>
 
-                @foreach($list as $categories)
-                  <tr>
-                    <td>{{ $categories->name }}</td>
-                    <td><p>{{ $categories->description }}</p></td>
-                    <td><a href="{{url('buscarcategorias', ['id' => $categories->id ])}}" 
-                    class="btn btn-primary">Ver detalle</a>
-                    </td>
-                    <td><a href="{{url('editarcategorias', ['id' => $categories->id ])}}" 
-                    class="btn btn-primary">Editar</a>
-                    </td>
-                    <td>
-                      {!! Form::open([
-                      'method' => 'DELETE',
-                      'url' => ['/agregarcategorias', $categories->id]
-                      ]) !!}
-                      {!! Form::submit('Eliminar?', ['class' => 'btn btn-danger']) !!}
-                      {!! Form::close() !!}
-                    </td>
-
-                  </tr>
-                @endforeach
+              <h1>Ver Articulos</h1>
+             
+              <hr>
+              @if($errors->any())
+              <div class="alert alert-danger">
+              @foreach($errors->all() as $error)
+              <p>{{ $error }}</p>
+              @endforeach
+              </div>
+              @endif
+              
+              
+              <table>
                 <tr>
-                    <td colspan="5">
-                      <div align="right">
-                      <a href="{!! url("/agregarcategorias") !!}" class="btn btn-primary">Agregar</a>
-                      </div>
-                    </td>
-                  </tr>
-                </table>
+                  <td>Nombre:</td><td>{{ $data->name }}</td>
+                </tr>
+                <tr>
+                  <td>Descripción:</td><td>{{ $data->description }}</td>
+                </tr>
+                <tr>
+                  <td>Categoria:</td><td>{{ $data->Category->name }}</td>
+                </tr>
+                <tr>
+                  <td>Fecha de Expiración:</td><td>{{ $data->date_expiration }}</td>
+                </tr>
+                <tr>
+                  <td>Kilometraje:</td><td>{{ $data->mileage }}</td>
+                </tr>
+                <tr>
+                  <td>Fecha Creación:</td><td>{{ $data->created_at }}</td>
+                </tr>
+                <tr>
+                  <td>Fecha Ultima Modificación:</td><td>{{ $data->updated_at }}</td>
+                </tr>
 
-
+              </table>
+                
+                
               </div> 
             </div>
             
@@ -172,14 +173,6 @@
       ========================================================
       -->
       
-      <a href="javascript:history.back()" class="btn"> Volver Atrás</a>
-      
-       <!--
-      <a href="javascript:history.back()"><img src="images/boton.jpg" height="33" width="100" alt="Botón"</a>
-            -->
-            <!--<input type="button" onclick="history.back()" name="volver atrás" value="volver atrás">
-            -->
-              
     </div>
     
 
