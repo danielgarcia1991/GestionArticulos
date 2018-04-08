@@ -51,43 +51,8 @@
                     <blockquote class="box">
                       <div class="box_aside"><img src="" alt=""></div>
                       <div class="box_cnt__no-flow">
-                        <p>
-                          <q>uno</q>
-                        </p>
-                        <cite><a href="#"></a></cite>
-                      </div>
-                    </blockquote>
-                  </div>
-                  <div class="item">
-                    <blockquote class="box">
-                      <div class="box_aside"><img src="" alt=""></div>
-                      <div class="box_cnt__no-flow">
-                        <p>
-                          <q>dos</q>
-                        </p>
-                        <cite><a href="#"></a></cite>
-                      </div>
-                    </blockquote>
-                  </div>
-                  <div class="item">
-                    <blockquote class="box">
-                      <div class="box_aside"><img src="" alt=""></div>
-                      <div class="box_cnt__no-flow">
-                        <p>
-                          <q>tres</q>
-                        </p>
-                        <cite><a href="#"></a></cite>
-                      </div>
-                    </blockquote>
-                  </div>
-                  <div class="item">
-                    <blockquote class="box">
-                      <div class="box_aside"><img src="" alt=""></div>
-                      <div class="box_cnt__no-flow">
-                        <p>
-                          <q>cuatro</q>
-                        </p>
-                        <cite><a href="#"></a></cite>
+                        
+                        
                       </div>
                     </blockquote>
                   </div>
