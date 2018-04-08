@@ -29,6 +29,10 @@ Route::get('/agregarcategorias','registroelementosController@create')->middlewar
 Route::get('/Registroelementos','CategoriesController@index')->middleware('auth');
 Route::get('/registrar_categorias','CategoriesController@create')->middleware('auth');
 Route::post('/insertar_categorias','CategoriesController@store')->middleware('auth');
+//Route::get('/editarcategorias/{id}','CategoriesController@edit')->middleware('auth');
+
+Route::get('/editarcategorias/{id}', 'CategoriesController@edit')->middleware('auth');
+Route::put('/editar_categorias/{id}','CategoriesController@update')->middleware('auth');
 
 
 

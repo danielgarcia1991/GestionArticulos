@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\model\Category;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 use Session;
 
@@ -17,7 +19,11 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $user = Auth::user();
+        $id = Auth::id();
+
+        $categories = User::find($id)->categories;
+
         return view('web.Registroelementos', ['list' => $categories]);
     }
 
@@ -88,6 +94,10 @@ class CategoriesController extends Controller
         //
     }
 
+    public function prueba($nombre){
+        echo "Hola:" . $nombre;
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -96,7 +106,15 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        try{
+            $category = Category::findOrFail($id);
+            return view('web.editar_categorias', ['data' => $category]);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('flash_message', "No se pudo encontrar este usuario");
+            return redirect()->back();
+        }
     }
 
     /**
@@ -108,7 +126,18 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //echo "update: ".$id;
+        $category = Category::findOrFail($id);
+
+        $this->validate($request, [
+            'name' => 'required | string | max:100',
+            'description' => 'required | string | max:100',
+            ]);
+
+        $input = $request->all();
+        $category->fill($input)->save();
+        Session::flash('flash_message', 'Categoria editada con exito!');
+        return redirect('/Registroelementos');
     }
 
     /**
