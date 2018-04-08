@@ -157,6 +157,7 @@
                     </div>
                     </td>
                   </tr>
+                  <?php echo Form::hidden('user_id', $user_id);?>
                 </table>
 
                 
