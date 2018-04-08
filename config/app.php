@@ -80,6 +80,7 @@ return [
 
     'locale' => 'es',
 
+
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -103,7 +104,6 @@ return [
     | will not be safe. Please do this before deploying an application!
     |
     */
-
     'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
@@ -124,6 +124,7 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+        Laraveles\Spanish\SpanishServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,

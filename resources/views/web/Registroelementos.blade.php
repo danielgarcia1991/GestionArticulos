@@ -172,6 +172,14 @@
       ========================================================
       -->
       
+      <a href="javascript:history.back()" class="btn"> Volver Atrás</a>
+      
+       <!--
+      <a href="javascript:history.back()"><img src="images/boton.jpg" height="33" width="100" alt="Botón"</a>
+            -->
+            <!--<input type="button" onclick="history.back()" name="volver atrás" value="volver atrás">
+            -->
+              
     </div>
     
 

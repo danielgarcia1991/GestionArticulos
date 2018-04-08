@@ -13,7 +13,6 @@ return [
     |
     */
 
-
     'accepted'             => 'El campo :attribute debe ser aceptado.',
     'active_url'           => 'El campo :attribute no es una URL válida.',
     'after'                => 'El campo :attribute debe ser una fecha posterior a :date.',
@@ -89,7 +88,6 @@ return [
     'unique'               => 'El valor del campo :attribute ya está en uso.',
     'uploaded'             => 'El campo :attribute falló al subir.',
     'url'                  => 'El formato del campo :attribute es inválido.',
-
 
     /*
     |--------------------------------------------------------------------------
