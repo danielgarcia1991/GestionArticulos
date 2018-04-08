@@ -112,7 +112,7 @@ class CategoriesController extends Controller
         }
         catch(ModelNotFoundException $e)
         {
-            Session::flash('flash_message', "No se pudo encontrar este usuario");
+            Session::flash('flash_message', "No se pudo encontrar esta categoria");
             return redirect()->back();
         }
     }

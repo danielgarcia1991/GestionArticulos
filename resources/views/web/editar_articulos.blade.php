@@ -122,46 +122,53 @@
 
 
               <div class="grid_9">
-                <h2>Articulos</h2><img src="" alt="">
-                
-                <table>
-                  <tr bgcolor="#C9C9C9">
-                    <td>Articulo</td>
-                    <td>Categoria</td>
-                    <td>Descripción</td>
-                    <td colspan="3">&nbsp;</td>
-                   
-                  </tr>
-                  @foreach($list as $articles)
-                  
-                    <tr>
-                      <td>{{ $articles->name }}</td>
-                      <td><p>{{ $articles->Category->name }}</p></td>
-                      <td>{{ $articles->description }}</td>
-                      <td><a href="{{url('editararticulos', ['id' => $articles->id ])}}" 
-                    class="btn btn-primary">Editar</a>
-                      
-                      <td>
-                        {!! Form::open([
-                        'method' => 'DELETE',
-                        'url' => ['/agregarcategorias', 1]
-                        ]) !!}
-                        {!! Form::submit('Eliminar?', ['class' => 'btn btn-danger']) !!}
-                        {!! Form::close() !!}
-                      </td>
 
-                    </tr>
-                  @endforeach
+              <h1>Editar Articulos</h1>
+             
+              <hr>
+              @if($errors->any())
+              <div class="alert alert-danger">
+              @foreach($errors->all() as $error)
+              <p>{{ $error }}</p>
+              @endforeach
+              </div>
+              @endif
+              
+              
+              {!! Form::open(['url' => ['editar_articulos',$data->id], 'method' => 'PUT']) !!}
+              <table>
+                <tr>
+                  <td>Nombre:</td><td><?php echo Form::text('name', $data->name);?></td>
+                  <td>Descripción:</td><td><?php echo Form::text('description', $data->description);?></td>
+                </tr>
+                <tr>
+                  <td>Fecha de Expiración (YYYY-mm-dd):</td><td><?php echo Form::text('date_expiration', $data->date_expiration);?></td>
+                  <td>Kilometraje:</td><td><?php echo Form::text('mileage', $data->mileage);?></td>
+                </tr>
+                <tr>
+                  <td>Categoria</td>
+                  <td>
+                    <select name="category_id" id="category_id">
+                          <option value="{{ $data->Category->id }}">{{ $data->Category->name }}</option>
+                          @foreach($list as $categories)
+                            <option value="{{ $categories->id }}">{{ $categories->name }}</option>
+                            @endforeach
+                      </select>
+                  </td>
+                </tr>
 
-                  <tr>
-                    <td colspan="5">
-                      <div align="right">
-                        <a href="{!! url("/agregararticulos") !!}" class="btn btn-primary">Agregar</a>
-                      </div>
+                <tr>
+                    <td colspan="4">   
+                    <div align="right">
+                      {!! Form::submit('Editar', ['class' => 'btn btn-primary']) !!}
+                    </div>
                     </td>
                   </tr>
-                </table>
+              </table>
                 
+                
+              </div> 
+            </div>
             
           </div>
         </section>

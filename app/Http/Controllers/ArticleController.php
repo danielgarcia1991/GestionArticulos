@@ -87,7 +87,20 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        try{
+            $user = Auth::user();
+            $id = Auth::id();        
+
+            $categories = User::find($id)->categories;
+            $article = Article::findOrFail($id);
+            return view('web.editar_articulos', ['data' => $article],['list' => $categories])->with('user_id', $id);
+            //return view('web.agregar_articles', ['list' => $categories])->with('user_id', $id);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('flash_message', "No se pudo encontrar este articulo");
+            return redirect()->back();
+        }
     }
 
     /**
@@ -99,7 +112,20 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $article = Article::findOrFail($id);
+
+        $this->validate($request, [
+            'name' => 'required | string | max:100',
+            'description' => 'required | string | max:100',
+            'mileage' => 'int',
+            'date_expiration' => 'date_format:"Y-m-d"|required',
+            'category_id' => 'required',
+            ]);
+
+        $input = $request->all();
+        $article->fill($input)->save();
+        Session::flash('flash_message', 'Articulo editado con exito!');
+        return redirect('/gestion_articulos');
     }
 
     /**
