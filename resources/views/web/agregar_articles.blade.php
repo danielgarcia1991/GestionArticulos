@@ -122,46 +122,65 @@
 
 
               <div class="grid_9">
-                <h2>Articulos</h2><img src="" alt="">
-                
-                <table>
-                  <tr bgcolor="#C9C9C9">
-                    <td>Articulo</td>
-                    <td>Categoria</td>
-                    <td>Descripción</td>
-                    <td colspan="3">&nbsp;</td>
-                   
-                  </tr>
-                  @foreach($list as $articles)
-                  
-                    <tr>
-                      <td>{{ $articles->name }}</td>
-                      <td><p>{{ $articles->Category->name }}</p></td>
-                      <td>{{ $articles->description }}</td>
-                      <td><a href="{!! url("/agregarcategorias", 1) !!}" 
-                      class="btn btn-primary">Editar</a></td>
-                      
-                      <td>
-                        {!! Form::open([
-                        'method' => 'DELETE',
-                        'url' => ['/agregarcategorias', 1]
-                        ]) !!}
-                        {!! Form::submit('Eliminar?', ['class' => 'btn btn-danger']) !!}
-                        {!! Form::close() !!}
-                      </td>
 
-                    </tr>
-                  @endforeach
+
+                
+                <h1>Agregar un nuevo Articulo</h1>
+                
+                <hr>
+
+                @if($errors->any())
+                  
+                @foreach($errors->all() as $error)
+                  <div class="alert alert-danger">
+                    <p><h6>{{ $error }}</h6></p>
+                  </div>
+                  <br>
+                @endforeach   
+                @endif
+
+                {!! Form::open(['url' => 'insertar_articulos', 'method' => 'post']) !!}
+
+                <table>
+                  <tr>
+                    <td>{!! Form::label('name', 'Nombre', ['class' => 'control-label']) !!}</td>
+                    <td>{!! Form::text('name', null, ['class' => 'form-control']) !!}</td>
+                    <td>{!! Form::label('description', 'Descripcion', ['class' => 'control-label']) !!}</td>
+                    <td>{!! Form::text('description', null, ['class' => 'form-control']) !!}</td>
+                  </tr>
+                  <tr>
+                    <td>{!! Form::label('date_expiration', 'Fecha de Expiración (YYYY-mm-dd)', ['class' => 'control-label']) !!}</td>
+                    <td>{!! Form::text('date_expiration', null, ['class' => 'form-control']) !!}</td>
+                    <td>{!! Form::label('mileage', 'Kilometraje', ['class' => 'control-label']) !!}</td>
+                    <td>{!! Form::text('mileage', null, ['class' => 'form-control']) !!}</td>
+                  </tr>
+                  <tr>
+                    <td>{!! Form::label('category', 'Categoria', ['class' => 'control-label']) !!}</td>
+                    
+                    <td>
+                      <select name="category_id" id="category_id">
+                          @foreach($list as $categories)
+                            <option value="{{ $categories->id }}">{{ $categories->name }}</option>
+                            @endforeach
+                      </select>
+                    </td>
+                  </tr>
+                      <?php echo Form::hidden('user_id', $user_id);?>
 
                   <tr>
-                    <td colspan="5">
-                      <div align="right">
-                        <a href="{!! url("/agregararticulos") !!}" class="btn btn-primary">Agregar</a>
-                      </div>
+                    <td colspan="4">   
+                    <div align="right">
+                      {!! Form::submit('Registrar', ['class' => 'btn btn-primary']) !!}
+                    </div>
                     </td>
                   </tr>
                 </table>
+
                 
+                {!! Form::close() !!}
+
+              </div> 
+            </div>
             
           </div>
         </section>

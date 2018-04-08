@@ -79,7 +79,7 @@ return [
     */
 
     'locale' => 'es',
-    
+
 
     /*
     |--------------------------------------------------------------------------
@@ -92,7 +92,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -104,7 +104,6 @@ return [
     | will not be safe. Please do this before deploying an application!
     |
     */
-
     'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',

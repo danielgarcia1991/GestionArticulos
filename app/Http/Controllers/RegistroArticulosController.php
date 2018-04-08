@@ -3,18 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\model\Category;
-use App\model\Article;
-use App\User;
-//use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Auth;
+use App\model\Category;
+use App\User;
 
-//use Illuminate\Suppoort\Facades\Auth;
-
-use Session;
-
-class ArticleController extends Controller
+class RegistroArticulosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,12 +16,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $id = Auth::id();
-
-        $articles = User::find($id)->articles;
-
-        return view('web.gestion_articulos', ['list' => $articles]);
+        //
     }
 
     /**
@@ -38,7 +26,12 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        $user = Auth::user();
+        $id = Auth::id();        
+
+        $categories = User::find($id)->categories;
+
+        return view('web.agregar_articles', ['list' => $categories])->with('user_id', $id);
     }
 
     /**
@@ -49,23 +42,7 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required | string | max:100',
-            'description' => 'required | string | max:100',
-            'mileage' => 'int',
-            'date_expiration' => 'date_format:"Y-m-d"|required',
-            'category_id' => 'required',
-            ]);
-
-        $input = $request->all();
-        Article::create($input);
-        Session::flash('flash_message', 'Articulo registrado con exito!');
-        return redirect('/gestion_articulos');
-    }
-
-    public function article()
-    {
-        
+        //
     }
 
     /**
@@ -76,7 +53,7 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
     /**
