@@ -27,12 +27,9 @@ class RegistroArticulosController extends Controller
     public function create()
     {
         $user = Auth::user();
-        $id = Auth::id();
-        
+        $id = Auth::id();        
 
         $categories = User::find($id)->categories;
-
-        //dd($user);
 
         return view('web.agregar_articles', ['list' => $categories])->with('user_id', $id);
     }

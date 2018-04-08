@@ -138,12 +138,9 @@
                       <td>{{ $articles->name }}</td>
                       <td><p>{{ $articles->Category->name }}</p></td>
                       <td>{{ $articles->description }}</td>
-                      <td><a href="{!! url("/agregararticulos") !!}" 
-                      class="btn btn-primary">Agregar</a></td>
                       <td><a href="{!! url("/agregarcategorias", 1) !!}" 
                       class="btn btn-primary">Editar</a></td>
                       
-
                       <td>
                         {!! Form::open([
                         'method' => 'DELETE',
@@ -155,6 +152,14 @@
 
                     </tr>
                   @endforeach
+
+                  <tr>
+                    <td colspan="5">
+                      <div align="right">
+                        <a href="{!! url("/agregararticulos") !!}" class="btn btn-primary">Agregar</a>
+                      </div>
+                    </td>
+                  </tr>
                 </table>
                 
             

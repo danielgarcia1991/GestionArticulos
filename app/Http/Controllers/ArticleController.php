@@ -49,10 +49,12 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        echo "entro";
         $this->validate($request, [
-            'name' => 'required | string | alpha_dash | max:66',
-            'description' => 'required | string | alpha_dash | max:6',
+            'name' => 'required | string | max:100',
+            'description' => 'required | string | max:100',
+            'mileage' => 'int',
+            'date_expiration' => 'date_format:"Y-m-d"|required',
+            'category_id' => 'required',
             ]);
 
         $input = $request->all();

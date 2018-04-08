@@ -126,7 +126,7 @@
                 
                 <table>
                   <tr bgcolor="#C9C9C9">
-                    <td>Nombre</td><td>Descripción</td><td>&nbsp;</td>
+                    <td>Nombre</td><td>Descripción</td><td colspan="2">&nbsp;</td>
                   </tr>
 
                 @foreach($list as $categories)
@@ -147,11 +147,17 @@
 
                   </tr>
                 @endforeach
+                <tr>
+                    <td colspan="5">
+                      <div align="right">
+                      <a href="{!! url("/agregarcategorias") !!}" class="btn btn-primary">Agregar</a>
+                      </div>
+                    </td>
+                  </tr>
                 </table>
 
 
               </div> 
-              <div align="right"><a href="{!! url("/agregarcategorias") !!}" class="btn">Nueva Categoria</a></div> 
             </div>
             
           </div>
