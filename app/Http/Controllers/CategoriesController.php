@@ -65,6 +65,7 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
+        
         $this->validate($request, [
             'name' => 'required | string | alpha_dash | max:66',
             'description' => 'required | string | alpha_dash | max:6',

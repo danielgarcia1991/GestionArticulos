@@ -19,11 +19,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
-Route::get('/agregarcategorias','registroelementosController@create')->middleware('auth');
 
 Route::get('/gestion_articulos','ArticleController@index')->middleware('auth');
+Route::get('/agregararticulos','RegistroArticulosController@create')->middleware('auth');
+Route::post('/insertar_articulos','ArticleController@store')->middleware('auth');
 
+
+Route::get('/agregarcategorias','registroelementosController@create')->middleware('auth');
+Route::get('/Registroelementos','CategoriesController@index')->middleware('auth');
 Route::get('/registrar_categorias','CategoriesController@create')->middleware('auth');
-
 Route::post('/insertar_categorias','CategoriesController@store')->middleware('auth');
+
+
+
+
 
