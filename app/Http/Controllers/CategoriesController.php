@@ -34,33 +34,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //echo "entro";
-        /*$category = new Category();
-        $category -> name = "prueba 2";
-        $category -> description = "pru descr";
-        $category -> save();*/
-
         return view('web.agregar_categorias');
-
-        //$category = Category::find(1);
-        
-        /*$posts = Category::where('id', '>=', 1)
-            ->where('description', '=', 'pru descr')
-            ->orderBy('description', 'desc')
-            ->get();
-
-        $posts = Category::all();
-
-        for($i=0; $i<count($posts); $i++)
-        {
-            echo $posts[$i]->name;
-        }*/
-
-        /*$posts = Category::where('id', '>=', 1)
-            ->where('description', '=', 'pru descr')
-            ->update(['name' => 'modificado']);*/
-
-        
     }
 
     /**
@@ -102,9 +76,6 @@ class CategoriesController extends Controller
         }
     }
 
-    public function prueba($nombre){
-        echo "Hola:" . $nombre;
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -134,7 +105,6 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //echo "update: ".$id;
         $category = Category::findOrFail($id);
 
         $this->validate($request, [
@@ -156,6 +126,17 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try
+        {
+            $category = Category::findOrFail($id);
+            $category->delete();
+            Session::flash('flash_message', 'Categoria eliminada con exito!');
+            return redirect('/Registroelementos');
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('flash_message', "La categoria no se pudo eliminar");
+            return redirect()->back();
+        }
     }
 }

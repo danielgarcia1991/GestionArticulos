@@ -133,26 +133,24 @@
                   <tr>
                     <td>{{ $categories->name }}</td>
                     <td><p>{{ $categories->description }}</p></td>
-                    <td><a href="{{url('buscarcategorias', ['id' => $categories->id ])}}" 
-                    class="btn btn-primary">Ver detalle</a>
+                    <td><div align="center"><a href="{{url('buscarcategorias', ['id' => $categories->id ])}}" 
+                    class="btn btn-primary">Ver detalle</a></div>
                     </td>
-                    <td><a href="{{url('editarcategorias', ['id' => $categories->id ])}}" 
-                    class="btn btn-primary">Editar</a>
+                    <td><div align="center"><a href="{{url('editarcategorias', ['id' => $categories->id ])}}" 
+                    class="btn btn-primary">Editar</a></div>
                     </td>
-                    <td>
-                      {!! Form::open([
-                      'method' => 'DELETE',
-                      'url' => ['/agregarcategorias', $categories->id]
-                      ]) !!}
-                      {!! Form::submit('Eliminar?', ['class' => 'btn btn-danger']) !!}
-                      {!! Form::close() !!}
+
+                    <td><div align="center"><a href="{{url('eliminarcategoria', ['id' => $categories->id ])}}" 
+                    class="btn btn-danger">Eliminar</a></div>
                     </td>
+
 
                   </tr>
                 @endforeach
                 <tr>
-                    <td colspan="5">
-                      <div align="right">
+                    <td colspan="4">&nbsp;</td>
+                    <td>
+                      <div align="center">
                       <a href="{!! url("/agregarcategorias") !!}" class="btn btn-primary">Agregar</a>
                       </div>
                     </td>

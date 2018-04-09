@@ -144,6 +144,17 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try
+        {
+            $article = Article::findOrFail($id);
+            $article->delete();
+            Session::flash('flash_message', 'Articulo eliminado con exito!');
+            return redirect('/gestion_articulos');
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('flash_message', "El articulo no se pudo eliminar");
+            return redirect()->back();
+        }
     }
 }
