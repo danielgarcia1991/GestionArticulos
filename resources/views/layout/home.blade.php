@@ -14,6 +14,14 @@
         $(document).ready(function () {
 
             $(".elimArticulo").click(function(){
+              var confirmacion = confirm("Desea borrar el articulo?")
+              if(confirmacion){
+                //coje ese atributo
+                window.location = $(this).attr("parametro");
+              }
+              });
+
+              $(".elimCategoria").click(function(){
               var confirmacion = confirm("Desea borrar la categoría?")
               if(confirmacion){
                 //coje ese atributo
@@ -21,6 +29,23 @@
               }
               });
           });
+        </script>
+
+        <script language="javascript">
+        function changeFunc() {
+          
+          if($("#type").val() == 1){
+            $('#divNameDate').show();
+            $('#divDate').show();
+            $('#divNameMileage').hide();
+            $('#divMileage').hide();
+          }else if($("#type").val() == 2){
+            $('#divNameMileage').show();
+            $('#divMileage').show();
+            $('#divNameDate').hide();
+            $('#divDate').hide();
+          }
+        }
         </script>
 
         <link rel="stylesheet" type="text/css" href="{{asset('css/grid.css')}}">

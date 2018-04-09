@@ -146,7 +146,7 @@
                     
                       
                     <td><div align="center"><a href="#" 
-                    parametro="/eliminararticulo/2" 
+                    parametro="/eliminararticulo/{{ $articles->id }}" 
                     class="btn btn-danger elimArticulo">Eliminar</a></div>
                     </td>
 

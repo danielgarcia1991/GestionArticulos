@@ -148,11 +148,38 @@
                     <td>{!! Form::label('description', 'Descripcion', ['class' => 'control-label']) !!}</td>
                     <td>{!! Form::text('description', null, ['class' => 'form-control']) !!}</td>
                   </tr>
+                  <td>Tipo</td>
+                  <td colspan="3">
+                      <select name="type" id="type" onchange="changeFunc();">
+                            <option value=""></option>
+                            <option value="1">Fecha</option>
+                            <option value="2">Kilometraje</option>
+                      </select>
+                    </td>
                   <tr>
-                    <td>{!! Form::label('date_expiration', 'Fecha de Expiración (YYYY-mm-dd)', ['class' => 'control-label']) !!}</td>
-                    <td>{!! Form::text('date_expiration', null, ['class' => 'form-control']) !!}</td>
-                    <td>{!! Form::label('mileage', 'Kilometraje', ['class' => 'control-label']) !!}</td>
-                    <td>{!! Form::text('mileage', null, ['class' => 'form-control']) !!}</td>
+                    
+                      <td>
+                        <div id="divNameDate" style="display:none;">
+                          {!! Form::label('date_expiration', 'Fecha de Expiración (YYYY-mm-dd)', ['class' => 'control-label']) !!}
+                        </div>
+                      </td>
+                    <td>
+                      <div id="divDate" style="display:none;">
+                        {!! Form::text('date_expiration', null, ['class' => 'form-control']) !!}
+                      </div>
+                    </td>
+                    
+                    <td>
+                      <div id="divNameMileage" style="display:none;">
+                        {!! Form::label('mileage', 'Kilometraje', ['class' => 'control-label']) !!}
+                        </div>
+                    </td>
+                      
+                    <td>
+                      <div id="divMileage" style="display:none;">
+                        {!! Form::text('mileage', null, ['class' => 'form-control']) !!}
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>{!! Form::label('category', 'Categoria', ['class' => 'control-label']) !!}</td>

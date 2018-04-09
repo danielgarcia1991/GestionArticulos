@@ -52,8 +52,8 @@ class ArticleController extends Controller
         $this->validate($request, [
             'name' => 'required | string | max:100',
             'description' => 'required | string | max:100',
-            'mileage' => 'int',
-            'date_expiration' => 'date_format:"Y-m-d"|required',
+            'mileage',
+            'date_expiration',
             'category_id' => 'required',
             ]);
 
@@ -93,14 +93,14 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($idU)
     {
         try{
             $user = Auth::user();
             $id = Auth::id();        
 
             $categories = User::find($id)->categories;
-            $article = Article::findOrFail($id);
+            $article = Article::findOrFail($idU);
             return view('web.editar_articulos', ['data' => $article],['list' => $categories])->with('user_id', $id);
             //return view('web.agregar_articles', ['list' => $categories])->with('user_id', $id);
         }

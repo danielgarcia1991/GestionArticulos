@@ -140,8 +140,11 @@
                     class="btn btn-primary">Editar</a></div>
                     </td>
 
-                    <td><div align="center"><a href="{{url('eliminarcategoria', ['id' => $categories->id ])}}" 
-                    class="btn btn-danger">Eliminar</a></div>
+                    
+
+                    <td><div align="center"><a href="#" 
+                    parametro="/eliminarcategoria/{{ $categories->id }}" 
+                    class="btn btn-danger elimCategoria">Eliminar</a></div>
                     </td>
 
 
