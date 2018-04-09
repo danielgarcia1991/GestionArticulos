@@ -7,6 +7,22 @@
 
         <title>Gestión Articulos</title>
 
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+
+        <script>
+        $(document).ready(function () {
+
+            $(".elimArticulo").click(function(){
+              var confirmacion = confirm("Desea borrar la categoría?")
+              if(confirmacion){
+                //coje ese atributo
+                window.location = $(this).attr("parametro");
+              }
+              });
+          });
+        </script>
+
         <link rel="stylesheet" type="text/css" href="{{asset('css/grid.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('css/camera.css')}}">

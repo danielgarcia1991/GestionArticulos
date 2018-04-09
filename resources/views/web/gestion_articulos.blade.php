@@ -145,8 +145,9 @@
                     class="btn btn-primary">Editar</a></td>
                     
                       
-                    <td><div align="center"><a href="{{url('eliminararticulo', ['id' => $articles->id ])}}" 
-                    class="btn btn-danger">Eliminar</a></div>
+                    <td><div align="center"><a href="#" 
+                    parametro="/eliminararticulo/2" 
+                    class="btn btn-danger elimArticulo">Eliminar</a></div>
                     </td>
 
                     </tr>
