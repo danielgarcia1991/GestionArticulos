@@ -141,8 +141,25 @@
                   <td>Nombre:</td><td><?php echo Form::text('name', $data->name);?></td>
                 </tr>
                 <tr>
-                  <td>Descripción:</td><td><?php echo Form::text('description', $data->description);?></td>
+                  <td>Descripción:</td><td><?php echo Form::text('description', $data->User->type);?></td>
                 </tr>
+
+                @if ($type_user === 'administrator')
+                    <tr>
+                      <td>Usuario:</td>
+                      <td>
+                      <select name="user_id" id="user_id">
+                          <option value="{{ $data->User->id }}">{{ $data->User->name }}</option>
+                          @foreach($list_users as $users)
+                            <option value="{{ $users->id }}">{{ $users->name }}</option>
+                            @endforeach
+                      </select>
+                      </td>
+                    </tr>
+                  @else
+                    
+                  @endif
+
 
                 <tr>
                     <td colspan="4">   

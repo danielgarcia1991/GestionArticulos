@@ -16,7 +16,7 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('type_expiration')->nullable();
+            $table->string('type');
             $table->date('date_expiration')->nullable();
             $table->integer('mileage')->nullable();
             $table->string('description')->nullable();

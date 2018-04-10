@@ -22,7 +22,12 @@ class CategoriesController extends Controller
         $user = Auth::user();
         $id = Auth::id();
 
-        $categories = User::find($id)->categories;
+        $user = Auth::user();
+        if($user->type == "user"){
+            $categories = User::find($id)->categories;
+        }else{
+            $categories = Category::all();
+        }
 
         return view('web.Registroelementos', ['list' => $categories]);
     }
@@ -48,7 +53,7 @@ class CategoriesController extends Controller
         
         $this->validate($request, [
             'name' => 'required | string | max:100',
-            'description' => 'required | string | max:100',
+            'description',
             ]);
 
         $input = $request->all();
@@ -86,8 +91,10 @@ class CategoriesController extends Controller
     public function edit($id)
     {
         try{
+            $user = Auth::user();
             $category = Category::findOrFail($id);
-            return view('web.editar_categorias', ['data' => $category]);
+            $users = User::all();
+            return view('web.editar_categorias', ['data' => $category], ['list_users' => $users])->with('type_user', $user->type);
         }
         catch(ModelNotFoundException $e)
         {
@@ -109,7 +116,7 @@ class CategoriesController extends Controller
 
         $this->validate($request, [
             'name' => 'required | string | max:100',
-            'description' => 'required | string | max:100',
+            'description',
             ]);
 
         $input = $request->all();

@@ -142,6 +142,7 @@
                 {!! Form::open(['url' => 'insertar_categorias', 'method' => 'post']) !!}
 
                 <table>
+                <tr><td><?php echo $type_user;?></td></tr>
                   <tr>
                     <td>{!! Form::label('name', 'Nombre', ['class' => 'control-label']) !!}</td>
                     <td>{!! Form::text('name', null, ['class' => 'form-control']) !!}</td>
@@ -150,6 +151,20 @@
                     <td>{!! Form::label('description', 'Descripcion', ['class' => 'control-label']) !!}</td>
                     <td>{!! Form::text('description', null, ['class' => 'form-control']) !!}</td>
                   </tr>
+                  @if ($type_user === 'administrator')
+                    <tr>
+                      <td>Usuario:</td>
+                      <td>
+                        <select name="user_id" id="user_id">
+                            @foreach($list as $users)
+                              <option value="{{ $users->id }}">{{ $users->name }}</option>
+                              @endforeach
+                        </select>
+                      </td>
+                    </tr>
+                  @else
+                    <?php echo Form::hidden('user_id', $user_id);?>
+                  @endif
                   <tr>
                     <td colspan="2">   
                     <div align="right">
@@ -157,7 +172,8 @@
                     </div>
                     </td>
                   </tr>
-                  <?php echo Form::hidden('user_id', $user_id);?>
+                  
+                  
                 </table>
 
                 

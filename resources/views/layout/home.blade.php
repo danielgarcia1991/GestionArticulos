@@ -34,12 +34,12 @@
         <script language="javascript">
         function changeFunc() {
           
-          if($("#type").val() == 1){
+          if($("#type").val() == "Fecha"){
             $('#divNameDate').show();
             $('#divDate').show();
             $('#divNameMileage').hide();
             $('#divMileage').hide();
-          }else if($("#type").val() == 2){
+          }else if($("#type").val() == "Kilometraje"){
             $('#divNameMileage').show();
             $('#divMileage').show();
             $('#divNameDate').hide();

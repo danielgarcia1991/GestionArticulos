@@ -142,8 +142,25 @@
                   <td>Descripción:</td><td><?php echo Form::text('description', $data->description);?></td>
                 </tr>
                 <tr>
-                  <td>Fecha de Expiración (YYYY-mm-dd):</td><td><?php echo Form::text('date_expiration', $data->date_expiration);?></td>
-                  <td>Kilometraje:</td><td><?php echo Form::text('mileage', $data->mileage);?></td>
+                  <td>Tipo</td>
+                  <td colspan="3">
+                      <select name="type" id="type" onchange="changeFunc();">
+                            <option value="<?php echo $data->type;?>"><?php echo $data->type;?></option>
+                            <option value="Fecha">Fecha</option>
+                            <option value="Kilometraje">Kilometraje</option>
+                      </select>
+                    </td>
+                    </tr>
+                <tr>
+
+                  <td>
+                  <div id="divNameDate" style="display:none;">Fecha de Expiración (YYYY-mm-dd):</div></td>
+                  <td><div id="divDate" style="display:none;"><?php echo Form::text('date_expiration', $data->date_expiration);?>
+                  </div></td>
+
+                  <td><div id="divNameMileage" style="display:none;">Kilometraje:</div></td>
+                  <td><div id="divMileage" style="display:none;"><?php echo Form::text('mileage', $data->mileage);?>
+                  </div></td>
                 </tr>
                 <tr>
                   <td>Categoria</td>

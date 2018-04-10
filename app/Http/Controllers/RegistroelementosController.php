@@ -21,9 +21,11 @@ class RegistroelementosController extends Controller
     public function create()
     {
         $user = Auth::user();
-        $id = Auth::id();  
+        $id = Auth::id();
 
-        return view('web.agregar_categorias')->with('user_id', $id);
+        $users = User::all();
+
+        return view('web.agregar_categorias', ['list' => $users])->with('user_id', $id)->with('type_user', $user->type);
     }
     
 }

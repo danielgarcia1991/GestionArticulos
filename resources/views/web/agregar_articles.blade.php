@@ -148,14 +148,16 @@
                     <td>{!! Form::label('description', 'Descripcion', ['class' => 'control-label']) !!}</td>
                     <td>{!! Form::text('description', null, ['class' => 'form-control']) !!}</td>
                   </tr>
+                  <tr>
                   <td>Tipo</td>
                   <td colspan="3">
                       <select name="type" id="type" onchange="changeFunc();">
                             <option value=""></option>
-                            <option value="1">Fecha</option>
-                            <option value="2">Kilometraje</option>
+                            <option value="Fecha">Fecha</option>
+                            <option value="Kilometraje">Kilometraje</option>
                       </select>
                     </td>
+                    </tr>
                   <tr>
                     
                       <td>

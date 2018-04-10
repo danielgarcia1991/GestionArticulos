@@ -49,13 +49,18 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
+//dd($request);
+
         $this->validate($request, [
             'name' => 'required | string | max:100',
-            'description' => 'required | string | max:100',
+            'description',
             'mileage',
             'date_expiration',
+            'type',
             'category_id' => 'required',
+            
             ]);
+            
 
         $input = $request->all();
         Article::create($input);
@@ -124,9 +129,9 @@ class ArticleController extends Controller
 
         $this->validate($request, [
             'name' => 'required | string | max:100',
-            'description' => 'required | string | max:100',
-            'mileage' => 'int',
-            'date_expiration' => 'date_format:"Y-m-d"|required',
+            'description',
+            'mileage',
+            'date_expiration',
             'category_id' => 'required',
             ]);
 

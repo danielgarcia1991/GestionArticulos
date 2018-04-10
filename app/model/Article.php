@@ -13,7 +13,8 @@ class Article extends Model
         'date_expiration',
         'user_id',
         'mileage',
-        'category_id'
+        'category_id',
+        'type'
         ];
 
     public function category()
