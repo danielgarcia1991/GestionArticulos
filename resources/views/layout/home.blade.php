@@ -168,13 +168,7 @@
             </ul>
           </div>
         </section>
-        <section>
-          <div class="container">
-            <div class="copyright">Business Company © <span id="copyright-year"></span>.&nbsp;&nbsp;<a href="index-5.html">Privacy Policy</a>More <a rel="nofollow" href="http://www.templatemonster.com/category.php?category=418&type=1" target="_blank">Business Templates at TemplateMonster.com</a>
-            </div>
-          </div>
-        </section>
-      </footer> }
+         </footer> 
       <script src="{{asset('js/script.js')}}"></script>
     </body>
 </html>
