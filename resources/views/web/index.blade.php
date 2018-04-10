@@ -27,7 +27,7 @@
                 <div class="info-box">
                   <h2>Inicio</h2>
                   <hr>
-                  <h3>Gestion de articulos</h3>
+                  <h3>Gestión de articulos</h3>
                   <dl>
                     <dt></dt>
                     <dd></dd>

@@ -64,7 +64,7 @@
     <header>
         <div class="container">
           <div class="brand">
-            <h1 class="brand_name"><a href="./">Gestion</a></h1>
+            <h1 class="brand_name"><a href="./">Gestión</a></h1>
             <p class="brand_slogan">Articulos</p>
 
                           
@@ -127,14 +127,14 @@
                     <div class="icon2 fa-map-marker"></div>
                   </div>
                   <div class="box_cnt__no-flow">
-                    <address>4578 Manizales,Caldas,Colombia<br/> </address>
+                    <address>calle 26 # 26-16 Manizales,Caldas,Colombia<br/> </address>
                   </div>
                 </div>
                 <div class="box">
                   <div class="box_aside">
                     <div class="icon2 fa-envelope"></div>
                   </div>
-                  <div class="box_cnt__no-flow"><a href="mailto:#">info@daniel.garcial</a></div>
+                  <div class="box_cnt__no-flow"><a href="mailto:#">info@daniel.garcial  info@sebastian.valencias</a></div>
                 </div>
               </li>
               <li class="grid_4">

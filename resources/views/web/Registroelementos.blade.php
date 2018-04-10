@@ -18,7 +18,7 @@
                 <div class="info-box">
                   <a href="javascript:history.back()" class="btn"> Volver Atrás</a>
                   <hr>
-                  <h3>Gestion de Categorias</h3>                  
+                  <h3>Gestión de Categorias</h3>                  
                   <dl>
                     <dt></dt>
                     <dd></dd>
