@@ -194,7 +194,21 @@
                       </select>
                     </td>
                   </tr>
-                      <?php echo Form::hidden('user_id', $user_id);?>
+                  
+                  @if ($type_user === 'administrator')
+                    <tr>
+                      <td>Usuario:</td>
+                      <td>
+                        <select name="user_id" id="user_id">
+                            @foreach($list_user as $users)
+                              <option value="{{ $users->id }}">{{ $users->name }}</option>
+                              @endforeach
+                        </select>
+                      </td>
+                    </tr>
+                  @else
+                    <?php echo Form::hidden('user_id', $user_id);?>
+                  @endif
 
                   <tr>
                     <td colspan="4">   

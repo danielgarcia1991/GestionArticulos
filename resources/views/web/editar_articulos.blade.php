@@ -174,6 +174,20 @@
                   </td>
                 </tr>
 
+                @if ($type_user === 'administrator')
+                    <tr>
+                      <td>Usuario:</td>
+                      <td>
+                      <select name="user_id" id="user_id">
+                          <option value="{{ $data->User->id }}">{{ $data->User->name }}</option>
+                          
+                      </select>
+                      </td>
+                    </tr>
+                  @else
+                    
+                  @endif
+
                 <tr>
                     <td colspan="4">   
                     <div align="right">

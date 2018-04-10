@@ -30,8 +30,9 @@ class RegistroArticulosController extends Controller
         $id = Auth::id();        
 
         $categories = User::find($id)->categories;
+        $users = User::all();
 
-        return view('web.agregar_articles', ['list' => $categories])->with('user_id', $id);
+        return view('web.agregar_articles', ['list' => $categories], ['list_user' => $users])->with('user_id', $id)->with('type_user', $user->type);
     }
 
     /**

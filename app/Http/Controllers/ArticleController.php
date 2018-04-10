@@ -26,7 +26,12 @@ class ArticleController extends Controller
         $user = Auth::user();
         $id = Auth::id();
 
-        $articles = User::find($id)->articles;
+        $user = Auth::user();
+        if($user->type == "user"){
+            $articles = User::find($id)->articles;
+        }else{
+            $articles = Article::all();
+        }
 
         return view('web.gestion_articulos', ['list' => $articles]);
     }
@@ -106,7 +111,8 @@ class ArticleController extends Controller
 
             $categories = User::find($id)->categories;
             $article = Article::findOrFail($idU);
-            return view('web.editar_articulos', ['data' => $article],['list' => $categories])->with('user_id', $id);
+            $users = User::all();
+            return view('web.editar_articulos', ['data' => $article], ['list' => $categories])->with('user_id', $id)->with('type_user', $user->type);
             //return view('web.agregar_articles', ['list' => $categories])->with('user_id', $id);
         }
         catch(ModelNotFoundException $e)
