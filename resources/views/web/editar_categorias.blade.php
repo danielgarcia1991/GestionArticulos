@@ -141,7 +141,7 @@
                   <td>Nombre:</td><td><?php echo Form::text('name', $data->name);?></td>
                 </tr>
                 <tr>
-                  <td>Descripción:</td><td><?php echo Form::text('description', $data->User->type);?></td>
+                  <td>Descripción:</td><td><?php echo Form::text('description', $data->description);?></td>
                 </tr>
 
                 @if ($type_user === 'administrator')
