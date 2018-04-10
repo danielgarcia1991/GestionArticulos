@@ -142,7 +142,7 @@
                 {!! Form::open(['url' => 'insertar_categorias', 'method' => 'post']) !!}
 
                 <table>
-                <tr><td><?php echo $type_user;?></td></tr>
+               
                   <tr>
                     <td>{!! Form::label('name', 'Nombre', ['class' => 'control-label']) !!}</td>
                     <td>{!! Form::text('name', null, ['class' => 'form-control']) !!}</td>
