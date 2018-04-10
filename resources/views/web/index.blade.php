@@ -25,7 +25,7 @@
               </div>-->
               <div class="grid_3">
                 <div class="info-box">
-                  <h2 class="fa-comment">Ayuda</h2>
+                  <h2>Inicio</h2>
                   <hr>
                   <h3>Gestion de articulos</h3>
                   <dl>
@@ -63,7 +63,7 @@
 
               <div class="grid_9">
                 <h2>Acerca</h2><img src="" alt="">
-                <p>En esta aplicacion se podra realizar la gestión correspondiente de articulos consumibles sddddddddfdsfsdffdsfsdfdsfsdfdsfdfdsfsdfbvbcvb</p><a href="#" class="btn">Read more</a>
+                <p>Herramienta que realiza el registro de articulos consumibles con su respectiva categoría, con el fin de recordarle al usuario en qué momento se deben desechar o hacer cambios a estos, el usuario podrá consultar esta información y administrar mejor estos tiempos.</p>
               </div>
 
 

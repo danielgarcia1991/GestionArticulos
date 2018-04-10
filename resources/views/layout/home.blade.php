@@ -133,7 +133,7 @@
                   <div class="box_aside">
                     <div class="icon2 fa-envelope"></div>
                   </div>
-                  <div class="box_cnt__no-flow"><a href="mailto:#">info@demolink.org</a></div>
+                  <div class="box_cnt__no-flow"><a href="mailto:#">info@daniel.garcial</a></div>
                 </div>
               </li>
               <li class="grid_4">
@@ -141,13 +141,13 @@
                   <div class="box_aside">
                     <div class="icon2 fa-phone"></div>
                   </div>
-                  <div class="box_cnt__no-flow"><a href="callto:#">3004567333</a></div>
+                  <div class="box_cnt__no-flow"><a href="callto:#">3117791681</a></div>
                 </div>
                 <div class="box">
                   <div class="box_aside">
                     <div class="icon2 fa-fax"></div>
                   </div>
-                  <div class="box_cnt__no-flow"><a href="callto:#">3004567333</a></div>
+                  <div class="box_cnt__no-flow"><a href="callto:#">3164772378</a></div>
                 </div>
               </li>
               <li class="grid_4">
