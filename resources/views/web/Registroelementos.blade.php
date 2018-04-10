@@ -16,9 +16,9 @@
               
               <div class="grid_3">
                 <div class="info-box">
-                  <h2 > Gestion categorias </h2>
+                  <a href="javascript:history.back()" class="btn"> Volver Atrás</a>
                   <hr>
-                  <h3>Gestion de articulos</h3>
+                  <h3>Gestion de Categorias</h3>                  
                   <dl>
                     <dt></dt>
                     <dd></dd>
@@ -71,8 +71,7 @@
                   </dl>
 
                 </div>
-                 <a href="javascript:history.back()" class="btn"> Volver Atrás</a>
-                <div class="owl-carousel">
+                  <div class="owl-carousel">
                   <div class="item">
                     <blockquote class="box">
                       <div class="box_aside"><img src="" alt=""></div>
