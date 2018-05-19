@@ -16,9 +16,9 @@
               
               <div class="grid_3">
                 <div class="info-box">
-                  <h2 >Atras</h2>
+                  <a href="javascript:history.back()" class="btn"> Volver Atrás</a>
                   <hr>
-                  <h3>Gestion de articulos</h3>
+                  <h3>Gestión de articulos</h3>
                   <dl>
                     <dt></dt>
                     <dd></dd>

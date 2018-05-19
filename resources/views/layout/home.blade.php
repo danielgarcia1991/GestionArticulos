@@ -64,7 +64,7 @@
     <header>
         <div class="container">
           <div class="brand">
-            <h1 class="brand_name"><a href="./">Gestion</a></h1>
+            <h1 class="brand_name"><a href="./">Gestión</a></h1>
             <p class="brand_slogan">Articulos</p>
 
                           
@@ -73,6 +73,7 @@
                 <a class="dropdown-item" href="{{ route('logout') }}" 
                   onclick="event.preventDefault();
                   document.getElementById('logout-form').submit();">
+                  <button type="submit" class="btn btn-primary">
                   Cerrar Sesión
                 </a>
 
@@ -126,14 +127,14 @@
                     <div class="icon2 fa-map-marker"></div>
                   </div>
                   <div class="box_cnt__no-flow">
-                    <address>4578 Manizales,Caldas,Colombia<br/> </address>
+                    <address>calle 26 # 26-16 Manizales,Caldas,Colombia<br/> </address>
                   </div>
                 </div>
                 <div class="box">
                   <div class="box_aside">
                     <div class="icon2 fa-envelope"></div>
                   </div>
-                  <div class="box_cnt__no-flow"><a href="mailto:#">info@demolink.org</a></div>
+                  <div class="box_cnt__no-flow"><a href="mailto:#">info@daniel.garcial  info@sebastian.valencias</a></div>
                 </div>
               </li>
               <li class="grid_4">
@@ -141,13 +142,13 @@
                   <div class="box_aside">
                     <div class="icon2 fa-phone"></div>
                   </div>
-                  <div class="box_cnt__no-flow"><a href="callto:#">3004567333</a></div>
+                  <div class="box_cnt__no-flow"><a href="callto:#">3117791681</a></div>
                 </div>
                 <div class="box">
                   <div class="box_aside">
                     <div class="icon2 fa-fax"></div>
                   </div>
-                  <div class="box_cnt__no-flow"><a href="callto:#">3004567333</a></div>
+                  <div class="box_cnt__no-flow"><a href="callto:#">3164772378</a></div>
                 </div>
               </li>
               <li class="grid_4">
@@ -167,13 +168,7 @@
             </ul>
           </div>
         </section>
-        <section>
-          <div class="container">
-            <div class="copyright">Business Company © <span id="copyright-year"></span>.&nbsp;&nbsp;<a href="index-5.html">Privacy Policy</a>More <a rel="nofollow" href="http://www.templatemonster.com/category.php?category=418&type=1" target="_blank">Business Templates at TemplateMonster.com</a>
-            </div>
-          </div>
-        </section>
-      </footer> }
+         </footer> 
       <script src="{{asset('js/script.js')}}"></script>
     </body>
 </html>
