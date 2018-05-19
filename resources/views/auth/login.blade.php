@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card"> 
-                <div class="card-header" style="color:blue" >Inicio de Sesion</div>
+                <div align="center" class="card-header" style="color:blue" ><h6>Gestión de Articulos</h6></div>
                 </div>
 </div>
                     <div class="card-body">
