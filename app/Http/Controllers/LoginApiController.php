@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 
 use App\User;
@@ -36,7 +37,15 @@ class LoginApiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = User::where('email', '=', $request->input('email'))->first();
+
+        
+
+        if($user != null){
+            return response()->json(['status'=>true,'users'=>$user],200);
+        }else{
+            return response()->json(['status'=>false],200);
+        }
     }
 
     /**
@@ -47,7 +56,7 @@ class LoginApiController extends Controller
      */
     public function show($id)
     {
-        $user = User::where('email', '=', $id)->first();
+        $user = User::where('email', '=', 'sepitas18@hotmail.com')->first();
 
         if($user != null){
             return response()->json(['status'=>true,'users'=>$user],200);

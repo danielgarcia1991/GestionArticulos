@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\model\Article;
+use App\User;
 
 class ArticlesApiController extends Controller
 {
@@ -60,7 +61,8 @@ class ArticlesApiController extends Controller
     {
         
         $articles = User::find($id)->articles;
-        return response()->json($articles,200);
+        return response()->json(['error'=>true,'articles'=>$articles],200);
+
     }
 
     /**
