@@ -19,7 +19,8 @@ class CategoriesApiController extends Controller
     public function index()
     {
         $categories = User::find(1)->categories;
-        return response()->json($categories,200);
+        return response()->json(['error'=>true,'categories'=>$categories],200);
+        //return response()->json(['status'=>true,'Great Thanks'],200);
     }
 
     /**
