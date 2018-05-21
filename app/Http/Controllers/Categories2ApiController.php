@@ -5,21 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\model\Category;
-use App\User;
-use Illuminate\Support\Facades\Auth;
 
-class CategoriesApiController extends Controller
+class Categories2ApiController extends Controller
 {
     /**
-     * Display the specified resource.
+     * Display a listing of the resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $categories = User::find(1)->categories;
-        return response()->json($categories,200);
+        //
     }
 
     /**
@@ -40,23 +36,7 @@ class CategoriesApiController extends Controller
      */
     public function store(Request $request)
     {
-        /*$this->validate($request, [
-            'name' => 'required | string | max:100',
-            'description',
-            ]);
-
-        $input = $request->all();
-        Category::create($input);
-        Session::flash('flash_message', 'Categoria registrada con exito!');
-        return redirect('/Registroelementos');*/
-
-        $category = new Category([
-            'name' => $request->input('name'),
-            'description' => $request->input('description'),
-            'user_id' => $request->input('user_id'),
-        ]);
-        $category->save();
-        return response()->json(['status'=>true,'Great Thanks'],200);
+        //
     }
 
     /**
@@ -67,8 +47,8 @@ class CategoriesApiController extends Controller
      */
     public function show($id)
     {
-        $categories = User::find($id)->categories;
-        return response()->json($categories,200);
+        $category = Category::findOrFail($id);
+        return response()->json($category,200);
     }
 
     /**
