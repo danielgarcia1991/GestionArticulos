@@ -17,9 +17,18 @@ use Illuminate\Http\Request;
 
 
 Route::resource('api_registroelementos', 'CategoriesApiController')->only([
-    'index','show','store','destroy'
+    'show','store','destroy'
 ]);
 
 Route::resource('api_aregistroelementos', 'Categories2ApiController')->only([
+    'show'
+]);
+
+
+Route::resource('api_registroarticulos', 'ArticlesApiController')->only([
+    'show','store','destroy'
+]);
+
+Route::resource('api_aregistroarticulos', 'Articles2ApiController')->only([
     'show'
 ]);

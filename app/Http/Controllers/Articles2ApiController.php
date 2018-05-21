@@ -4,21 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\model\Category;
+use App\model\Article;
 use App\User;
-use Illuminate\Support\Facades\Auth;
 
-class CategoriesApiController extends Controller
+class Articles2ApiController extends Controller
 {
     /**
-     * Display the specified resource.
+     * Display a listing of the resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -39,13 +37,7 @@ class CategoriesApiController extends Controller
      */
     public function store(Request $request)
     {
-        $category = new Category([
-            'name' => $request->input('name'),
-            'description' => $request->input('description'),
-            'user_id' => $request->input('user_id'),
-        ]);
-        $category->save();
-        return response()->json(['status'=>true],200);
+        //
     }
 
     /**
@@ -56,10 +48,9 @@ class CategoriesApiController extends Controller
      */
     public function show($id)
     {
-        //devuelve una categoria por usuario
-        $categories = User::find($id)->categories;
-        return response()->json(['error'=>true,'categories'=>$categories],200);
-        //return response()->json($categories,200);
+        //recibe el id del usuario
+        $articles = User::find($id)->articles;
+        return response()->json($articles,200);
     }
 
     /**
@@ -93,8 +84,6 @@ class CategoriesApiController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::find($id);
-        $category->delete();
-        return response()->json(['status'=>true],200);
+        //
     }
 }

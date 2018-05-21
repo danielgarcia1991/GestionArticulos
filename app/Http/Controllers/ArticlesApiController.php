@@ -4,21 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\model\Category;
-use App\User;
-use Illuminate\Support\Facades\Auth;
+use App\model\Article;
 
-class CategoriesApiController extends Controller
+class ArticlesApiController extends Controller
 {
     /**
-     * Display the specified resource.
+     * Display a listing of the resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -39,13 +36,18 @@ class CategoriesApiController extends Controller
      */
     public function store(Request $request)
     {
-        $category = new Category([
+        $article = new Article([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
+            'mileage' => $request->input('mileage'),
+            'date_expiration' => $request->input('date_expiration'),
+            'type' => $request->input('type'),
             'user_id' => $request->input('user_id'),
+            'category_id' => $request->input('category_id'),
         ]);
-        $category->save();
+        $article->save();
         return response()->json(['status'=>true],200);
+
     }
 
     /**
@@ -56,10 +58,8 @@ class CategoriesApiController extends Controller
      */
     public function show($id)
     {
-        //devuelve una categoria por usuario
-        $categories = User::find($id)->categories;
-        return response()->json(['error'=>true,'categories'=>$categories],200);
-        //return response()->json($categories,200);
+        $article = Article::findOrFail($id);
+        return response()->json(['error'=>true,'articles'=>$article],200);
     }
 
     /**
@@ -93,8 +93,8 @@ class CategoriesApiController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::find($id);
-        $category->delete();
+        $article = Article::findOrFail($id);
+        $article->delete();
         return response()->json(['status'=>true],200);
     }
 }
