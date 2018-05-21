@@ -41,23 +41,13 @@ class CategoriesApiController extends Controller
      */
     public function store(Request $request)
     {
-        /*$this->validate($request, [
-            'name' => 'required | string | max:100',
-            'description',
-            ]);
-
-        $input = $request->all();
-        Category::create($input);
-        Session::flash('flash_message', 'Categoria registrada con exito!');
-        return redirect('/Registroelementos');*/
-
         $category = new Category([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
             'user_id' => $request->input('user_id'),
         ]);
         $category->save();
-        return response()->json(['status'=>true,'Great Thanks'],200);
+        return response()->json(['status'=>true],200);
     }
 
     /**
