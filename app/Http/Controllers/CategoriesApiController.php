@@ -95,6 +95,8 @@ class CategoriesApiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+        return response()->json(['status'=>true],200);
     }
 }
