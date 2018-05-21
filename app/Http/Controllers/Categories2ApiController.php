@@ -47,6 +47,7 @@ class Categories2ApiController extends Controller
      */
     public function show($id)
     {
+        //devuelve una categoria
         $category = Category::findOrFail($id);
         return response()->json($category,200);
     }

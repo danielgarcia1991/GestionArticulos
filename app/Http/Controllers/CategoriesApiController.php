@@ -68,8 +68,10 @@ class CategoriesApiController extends Controller
      */
     public function show($id)
     {
+        //devuelve una categoria por usuario
         $categories = User::find($id)->categories;
-        return response()->json($categories,200);
+        return response()->json(['error'=>true,'categories'=>$categories],200);
+        //return response()->json($categories,200);
     }
 
     /**
