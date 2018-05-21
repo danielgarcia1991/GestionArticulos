@@ -58,8 +58,9 @@ class ArticlesApiController extends Controller
      */
     public function show($id)
     {
-        $article = Article::findOrFail($id);
-        return response()->json(['error'=>true,'articles'=>$article],200);
+        
+        $articles = User::find($id)->articles;
+        return response()->json($articles,200);
     }
 
     /**
