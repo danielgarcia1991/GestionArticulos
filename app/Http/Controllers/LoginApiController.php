@@ -47,7 +47,7 @@ class LoginApiController extends Controller
      */
     public function show($id)
     {
-        $user = User::where('email', '=', $id)->first();;
+        $user = User::where('email', '=', $id)->first();
 
         if($user != null){
             return response()->json(['status'=>true,'users'=>$user],200);
