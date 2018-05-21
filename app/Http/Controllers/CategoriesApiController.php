@@ -82,7 +82,11 @@ class CategoriesApiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $input = $request->all();
+        $category->fill($input)->save();
+        return response()->json(['status'=>true],200);
+
     }
 
     /**

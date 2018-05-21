@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\model\Article;
+use App\User;
 
-class ArticlesApiController extends Controller
+class LoginApiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,18 +36,7 @@ class ArticlesApiController extends Controller
      */
     public function store(Request $request)
     {
-        $article = new Article([
-            'name' => $request->input('name'),
-            'description' => $request->input('description'),
-            'mileage' => $request->input('mileage'),
-            'date_expiration' => $request->input('date_expiration'),
-            'type' => $request->input('type'),
-            'user_id' => $request->input('user_id'),
-            'category_id' => $request->input('category_id'),
-        ]);
-        $article->save();
-        return response()->json(['status'=>true],200);
-
+        //
     }
 
     /**
@@ -58,9 +47,13 @@ class ArticlesApiController extends Controller
      */
     public function show($id)
     {
-        
-        $articles = User::find($id)->articles;
-        return response()->json($articles,200);
+        $user = User::where('email', '=', $id)->first();;
+
+        if($user != null){
+            return response()->json(['status'=>true,'users'=>$user],200);
+        }else{
+            return response()->json(['status'=>false],200);
+        }
     }
 
     /**
@@ -83,10 +76,7 @@ class ArticlesApiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $article = Article::findOrFail($id);
-        $input = $request->all();
-        $article->fill($input)->save();
-        return response()->json(['status'=>true],200);
+        //
     }
 
     /**
@@ -97,8 +87,6 @@ class ArticlesApiController extends Controller
      */
     public function destroy($id)
     {
-        $article = Article::findOrFail($id);
-        $article->delete();
-        return response()->json(['status'=>true],200);
+        //
     }
 }
