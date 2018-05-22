@@ -46,6 +46,7 @@ class CategoriesApiController extends Controller
         ]);
         $category->save();
         return response()->json(['status'=>true],200);
+        
     }
 
     /**

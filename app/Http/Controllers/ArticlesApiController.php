@@ -102,5 +102,6 @@ class ArticlesApiController extends Controller
         $article = Article::findOrFail($id);
         $article->delete();
         return response()->json(['status'=>true],200);
+        
     }
 }
